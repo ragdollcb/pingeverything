@@ -15,7 +15,7 @@ func checkLatency(dial net.Conn) time.Duration {
 
 	// 发送 PING 命令（使用 Redis 协议格式）
 	//_, err := dial.Write([]byte("*1\r\n$4\r\nPING\r\n"))
-	_, err := dial.Write([]byte("*1\r\n$4\r\nPING\r\n"))
+	_, err := dial.Write([]byte("PING"))
 	if err != nil {
 		log.Fatal(err)
 	}
